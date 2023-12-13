@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Complete</title>
+    <script src="./javascript/index.js" type="module"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form autocomplete="off" style="display: flex; gap: 5px; flex-direction: column;">
+          <div class="input-container">
+        <label for="company">Company Name:</label>
+        <auto-complete id="companyauto" api="https://data.brreg.no/enhetsregisteret/api/enheter?navn=${company}" resultname="navn"
+            querymin="2" inputdelay="200" resultdata="enheter" optionmax="50" valid="please select a valid company name">
+            <input type="text" id="company" name="company" size="50" required />
+        </auto-complete>
+        </div>
+        <div class="input-container">
+        <label for="company">Company Number:</label>
+            <input type="text" id="orgna" readonly name="organisasjonsnummer" data-autofill="organisasjonsnummer" size="50" />
+        </div>
+       </form>
+    </form>
+
+</body>
+
+</html>
